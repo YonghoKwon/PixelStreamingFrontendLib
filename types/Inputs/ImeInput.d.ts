@@ -1,4 +1,4 @@
-/** Browser-owned composition buffer; only committed text crosses the data channel. */
+/** Browser-owned IME buffer with committed-text and input-only replacement paths. */
 export declare class ImeInput {
     private video;
     private enabled;
