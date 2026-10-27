@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+build/
+*.tgz
+*.log
+types/**/*.js
+types/**/*.js.map

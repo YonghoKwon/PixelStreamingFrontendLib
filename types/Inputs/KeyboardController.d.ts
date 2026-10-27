@@ -8,17 +8,20 @@ interface ICodeToKeyCode {
  * Handles the Keyboard Inputs for the document
  */
 export declare class KeyboardController {
+    private videoElement?;
     toStreamerMessagesProvider: StreamMessageController;
     activeKeysProvider: ActiveKeys;
     config: Config;
     private keyboardEventListenerTracker;
+    private ime?;
+    private forwardedKeys;
     CodeToKeyCode: ICodeToKeyCode;
     /**
      * @param toStreamerMessagesProvider Stream message provider class object
      * @param config The applications configuration. We're interested in the suppress browser keys option
      * @param activeKeysProvider Active keys provider class object
      */
-    constructor(toStreamerMessagesProvider: StreamMessageController, config: Config, activeKeysProvider: ActiveKeys);
+    constructor(toStreamerMessagesProvider: StreamMessageController, config: Config, activeKeysProvider: ActiveKeys, videoElement?: HTMLVideoElement);
     /**
      * Registers document keyboard events with the controller
      */
@@ -27,6 +30,9 @@ export declare class KeyboardController {
      * Unregisters document keyboard events
      */
     unregisterKeyBoardEvents(): void;
+    private releaseKeys;
+    private sendCommittedText;
+    private isLocalEditor;
     /**
      * Handles When a key is down
      * @param keyboardEvent - Keyboard event

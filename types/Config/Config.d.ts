@@ -22,6 +22,7 @@ export declare class Flags {
     static SuppressBrowserKeys: "SuppressBrowserKeys";
     static UseMic: "UseMic";
     static KeyboardInput: "KeyboardInput";
+    static EnableIME: "EnableIME";
     static MouseInput: "MouseInput";
     static TouchInput: "TouchInput";
     static GamepadInput: "GamepadInput";
