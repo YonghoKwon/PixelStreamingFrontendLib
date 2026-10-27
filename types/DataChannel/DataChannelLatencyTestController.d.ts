@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { DataChannelLatencyTestRecord, DataChannelLatencyTestRequest, DataChannelLatencyTestResponse, DataChannelLatencyTestResult, DataChannelLatencyTestSeq, DataChannelLatencyTestTimestamp } from "./DataChannelLatencyTestResults";
 export type DataChannelLatencyTestConfig = {
     duration: number;
@@ -14,7 +13,7 @@ export declare class DataChannelLatencyTestController {
     callback: DataChannelLatencyTestResultCallback;
     records: Map<DataChannelLatencyTestSeq, DataChannelLatencyTestRecord>;
     seq: DataChannelLatencyTestSeq;
-    interval: NodeJS.Timer;
+    interval: ReturnType<typeof setInterval>;
     constructor(sink: DataChannelLatencyTestSink, callback: DataChannelLatencyTestResultCallback);
     start(config: DataChannelLatencyTestConfig): boolean;
     stop(): void;
