@@ -1,6 +1,6 @@
 {
   "name": "@epicgames-ps/lib-pixelstreamingfrontend-ue5.3",
-  "version": "1.0.9+kwon.ime.1",
+  "version": "1.0.10",
   "description": "Frontend library for Unreal Engine 5.3 Pixel Streaming",
   "main": "dist/lib-pixelstreamingfrontend.js",
   "module": "dist/lib-pixelstreamingfrontend.esm.js",
@@ -12,7 +12,9 @@
     "build-dev": "npx webpack --config webpack.dev.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --detectOpenHandles --coverage=true",
-    "spellcheck": "cspell \"{README.md,.github/*.md,src/**/*.ts}\""
+    "spellcheck": "cspell \"{README.md,.github/*.md,src/**/*.ts}\"",
+    "package:release": "npm run compile && npm run build && node scripts/package-release.cjs",
+    "lock:portable": "npm install --package-lock-only --ignore-scripts --omit-lockfile-registry-resolved --no-audit --no-fund"
   },
   "devDependencies": {
     "@types/jest": "27.5.1",
@@ -42,17 +44,15 @@
   },
   "author": "Epic Games",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "private": true,
   "files": [
-    "dist",
+    "dist/lib-pixelstreamingfrontend.js",
+    "dist/lib-pixelstreamingfrontend.esm.js",
     "types/**/*.d.ts",
-    "src",
     "LICENSE.md",
     "readme.md",
     "IME.md",
-    "UPSTREAM.md"
+    "UPSTREAM.md",
+    "NEXUS.md"
   ]
 }

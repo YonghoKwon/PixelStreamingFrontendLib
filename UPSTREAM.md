@@ -7,9 +7,11 @@ The first commit and tag `upstream/ue5.3-1.0.9` preserve the unmodified npm pack
 - npm SHA1: `1e30b904f3f3b9d757fef21b22796217f40e1dfd`
 - npm integrity: `sha512-L/UcYWyHLygcj+hkGWv+4AaNf5hqeS54oV+DXnFydBLyrXRKqguUx0hworeq+O/dwLeyPpOMXZh7fgpujF0KkA==`
 
-The fork version uses build metadata (`1.0.9+kwon.ime.1`) so the UE5.3 UI
-library's existing peer range `^1.0.8` remains satisfied. It is consumed by
-immutable Git commit, not published under Epic's npm namespace.
+The internal npm release is `1.0.10`, based on official 1.0.9. This stable patch
+version satisfies the UE5.3 UI library's existing peer range `^1.0.8`.
+Built artifacts are distributed through the company's existing Nexus/npm
+configuration. No direct GitHub source/tarball dependency is required.
+The earlier `1.0.9+kwon.ime.1` Git snapshot remains preserved in history.
 
 In addition to IME support, the fork includes same-streamer peer preservation
 and missing-codec guards needed by the stock frontend with Cirrus v3.
